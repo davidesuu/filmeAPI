@@ -30,6 +30,7 @@ public class Filme {
 
     private String sinopse;
 
+    @ManyToMany(mappedBy = "filmes")
     private List<Usuario> usuarios;
 
     @Enumerated(EnumType.STRING)
