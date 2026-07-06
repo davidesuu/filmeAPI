@@ -8,6 +8,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import entity.Usuario;
 
+import java.util.List;
+
 
 @Entity
 @Data
@@ -28,9 +30,7 @@ public class Filme {
 
     private String sinopse;
 
-    @ManyToOne
-    @JoinColumn(name = "id_usuario")
-    private Usuario usuario;
+    private List<Usuario> usuarios;
 
     @Enumerated(EnumType.STRING)
     private Status status;

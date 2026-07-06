@@ -19,6 +19,11 @@ public class Usuario {
 
     private String nome;
 
-    @OneToMany(mappedBy = "usuario")
-    private List<Filme> assistidos;
+    @ManyToMany
+    @JoinTable(
+            name = "usuario_filme",
+            joinColumns = @JoinColumn(name = "id_usuario"),
+            inverseJoinColumns = @JoinColumn(name = "id_filme")
+    )
+    private List<Filme> filmes;
 }
